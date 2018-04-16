@@ -1,6 +1,8 @@
-var http = require('http');
+var	fs=require('fs');
 
-http.createServer(function (req, res) {
-    res.writeHead(200, {'Content-Type': 'text/html'});
-    res.end('Hello World!');
-}).listen(8080);
+fs.readFile(Aufgabe1+"/dateiname",	function(err,	data)	{	...	});
+                                                             
+fs.writeFile(Aufgabe1+"dateiname",	data,	function(err)	{	...	});
+
+JSON.stringify();
+JSON.parse();
