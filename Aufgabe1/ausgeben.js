@@ -11,7 +11,7 @@ fs.readFile("staedte.json",	function(err,	data)	{
     content = content.replace(/["]/g, '');
     content = content.replace(/\[/g,"").replace(/\]/g,"");
     content = content.replace("cities:", '');
-    
+
 
     var array = content.split(' ,');
     //console.log(array[0]);
