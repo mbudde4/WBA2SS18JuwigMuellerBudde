@@ -1,8 +1,23 @@
 var	fs=require('fs');
 
-fs.readFile(Aufgabe1+"/dateiname",	function(err,	data)	{	...	});
-                                                             
-fs.writeFile(Aufgabe1+"dateiname",	data,	function(err)	{	...	});
+var content;
 
-JSON.stringify();
-JSON.parse();
+
+fs.readFile("staedte.json",	function(err,	data)	{
+
+    var obj = JSON.parse(data);
+    JSON.stringify(obj(cities));
+    content = data.toString();
+
+
+        console.log(content);
+
+
+});
+
+
+
+
+
+
+
