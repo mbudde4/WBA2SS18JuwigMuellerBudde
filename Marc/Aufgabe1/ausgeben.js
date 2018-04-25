@@ -7,25 +7,29 @@ fs.readFile("staedte.json",	function(err,	data)	{
 
 
     content = data.toString();
-    content = content.replace(/[{}]/g, '');
-    content = content.replace(/["]/g, '');
-    content = content.replace(/\[/g,"").replace(/\]/g,"");
-    content = content.replace("cities:", '');
 
+    var obj = JSON.parse(content);
+    var str = JSON.stringify(obj);
 
-    var array = content.split(' ,');
-    //console.log(array[0]);
+    //cities und eckige klammern werden rausgeschmissen damit man später parsen kann
+    str = str.replace(/\{"cities":\[/g,'');
+    str = str.replace(/\]}/g,'');
+    str = str.replace(/},/g,'} , ');
 
+    //Splittet den String in ein Array
+    var array = str.split(' , ');
 
-   // var myobj = JSON.parse(JSON.stringify(content));
-    //console.log(content);
+    //console.log(str);
 
     var i = 0;
 
     while (i < array.length-1)
     {
-        console.log(array[i]);
-        console.log("      ---------------");
+        var obj = JSON.parse(array[i]);
+        console.log("name: " + obj.name);
+        console.log("country: " + obj.country);
+        console.log("population: " + obj.population);
+        console.log("------------------");
         i++;
     }
 
