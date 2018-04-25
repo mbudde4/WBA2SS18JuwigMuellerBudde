@@ -1,4 +1,7 @@
 var	fs=require('fs');
+const chalk=require('chalk');
+
+
 
 var content;
 
@@ -26,9 +29,9 @@ fs.readFile("staedte.json",	function(err,	data)	{
     while (i < array.length-1)
     {
         var obj = JSON.parse(array[i]);
-        console.log("name: " + obj.name);
-        console.log("country: " + obj.country);
-        console.log("population: " + obj.population);
+        console.log("name: " + chalk.red(obj.name));
+        console.log("country: " + chalk.green(obj.country));
+        console.log("population: " + chalk.blue(obj.population));
         console.log("------------------");
         i++;
     }
