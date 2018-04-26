@@ -17,28 +17,25 @@ fs.readFile("staedte.json",	function(err,	data)	{
     //cities und eckige klammern werden rausgeschmissen damit man später parsen kann
     str = str.replace(/\{"cities":\[/g,'');
     str = str.replace(/\]}/g,'');
-    /*str = str.replace(/"name"/g, 'name');
-    str = str.replace(/"country"/g, 'country');
-    str = str.replace(/"population"/g, 'population');*/
+
     str = str.replace(/},/g,'} , ');
     console.log(str);
     //Splittet den String in ein Array
-    var array = str.split(' , ');
+    var staedte = str.split(' , ');
 
-    function compareNumbers(a, b) {
-        return a - b;
-    }
-    array.sort(function (a, b) {
-        return a.population - b.population;
-    });
-    console.log(array);
+
+
+
+
+    console.log(staedte);
     //console.log(str);
 
     var i = 0;
 
-    while (i < array.length)
+
+    while (i < staedte.length)
     {
-        var obj = JSON.parse(array[i]);
+        var obj = JSON.parse(staedte[i]);
 
         console.log("name: " + chalk.red(obj.name));
         console.log("country: " + chalk.green(obj.country));
