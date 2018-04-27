@@ -1,16 +1,18 @@
 var	fs=require('fs');
 const chalk=require('chalk');
 
-    var p1 = new Promise(function(first, second, zusammenfuegen){
-        zusammenfuegen(first(),second());
+    var promise = new Promise(function(resolve, reject){
+
+            var staedte;
+            resolve(staedte);
 
     });
 
 
 
-    p1.then(first).then(second).then(zusammenfuegen).then(function(alleStaedte){
+    promise.then(first).then(second).then(function(response){
         //Ausgabe
-        var i = 0;
+       /* var i = 0;
 
         while (i < alleStaedte.length) {
 
@@ -19,12 +21,13 @@ const chalk=require('chalk');
             console.log("population: " + chalk.blue(alleStaedte[i].population));
             console.log("------------------");
             i++;
-        }
+        }*/
+       console.log(response);
     });
 
-    function first() {
+    function first(staedte) {
 
-        var staedte1= fs.readFile("staedte.json",	function(err,	data)	{
+         staedte = fs.readFile("staedte.json",	function(err,	data)	{
 
             var content1 = data.toString();
 
@@ -39,10 +42,10 @@ const chalk=require('chalk');
             var staedte1 = JSON.parse(content1);
             return staedte1;
         });
-        return staedte1;
+        return staedte;
     }
 
-    function second() {
+    function second(staedte) {
 
         var staedte2 = fs.readFile("mehr_staedte.json", function second(err,	data) {
 
@@ -58,17 +61,13 @@ const chalk=require('chalk');
             return staedte2;
         });
 
-        return staedte2;
-
-    }
-
-    function zusammenfuegen(staedte1, staedte2)
-    {
-        //staedte1 und staedte2 werden zusammengeführt
-        var alleStaedte = staedte1.concat(staedte2);
+        var alleStaedte = staedte.concat(staedte2);
         return alleStaedte;
 
     }
+
+
+
 
 
 
