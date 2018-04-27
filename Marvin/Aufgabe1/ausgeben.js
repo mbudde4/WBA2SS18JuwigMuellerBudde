@@ -1,4 +1,7 @@
 var	fs=require('fs');
+const chalk=require('chalk');
+
+
 
 var content;
 
@@ -7,28 +10,54 @@ fs.readFile("staedte.json",	function(err,	data)	{
 
 
     content = data.toString();
-    content = content.replace(/[{}]/g, '');
-    content = content.replace(/["]/g, '');
-    content = content.replace(/\[/g,"").replace(/\]/g,"");
-    content = content.replace("cities:", '');
+
+    var obj = JSON.parse(content);
+    var str = JSON.stringify(obj);
+
+    //cities und eckige klammern werden rausgeschmissen damit man später parsen kann
+    str = str.replace(/\{"cities":\[/g,'');
+    str = str.replace(/\]}/g,'');
+
+    //console.log(str);
+
+    //Macht aus dem String ein json array und kein String array so wie split
+    var staedte = JSON.parse("[" + str + "]");
+
+    //sortiert nach population
+    staedte.sort(function (a, b) {
+        return a.population - b.population;
+    });
+
+    var string = JSON.stringify(staedte);
+    string = string.replace(/\[/g,'{"cities":\[');
+    string = string.replace(/\]/g,'\]}');
+    console.log(string);
+    fs.writeFile("staedte_sortiert.json", string, function(err) {
+        if(err) {
+            return console.log(err);
+        }
+
+        console.log("The file was saved!");
+    });
 
 
-    var array = content.split(' ,');
-    //console.log(array[0]);
 
+    //console.log(staedte);
 
-   // var myobj = JSON.parse(JSON.stringify(content));
-    //console.log(content);
-
+    //Ausgabe
     var i = 0;
 
-    while (i < array.length-1)
+    while (i < staedte.length)
     {
-        console.log(array[i]);
-        console.log("      ---------------");
+       //var object = JSON.parse(staedte[i]);
+
+
+        console.log("name: " + chalk.red(staedte[i].name));
+        console.log("country: " + chalk.green(staedte[i].country));
+        console.log("population: " + chalk.blue(staedte[i].population));
+        console.log("------------------");
         i++;
     }
-
 
 });
 
