@@ -27,7 +27,7 @@ const chalk=require('chalk');
 
     function first(staedte) {
 
-         staedte = fs.readFile("staedte.json",	function(err,	data)	{
+        staedte = fs.readFile("staedte.json", function(err,	data)	{
 
             var content1 = data.toString();
 
@@ -40,14 +40,17 @@ const chalk=require('chalk');
 
             //json array wird erstellt
             var staedte1 = JSON.parse(content1);
+             //console.log(staedte1);
             return staedte1;
         });
-        return staedte;
+        console.log(staedte);
+         return staedte;
+
     }
 
     function second(staedte) {
 
-        var staedte2 = fs.readFile("mehr_staedte.json", function second(err,	data) {
+        fs.readFile("mehr_staedte.json", function second(err,	data) {
 
             var content2 = data.toString();
 
@@ -61,8 +64,8 @@ const chalk=require('chalk');
             return staedte2;
         });
 
-        var alleStaedte = staedte.concat(staedte2);
-        return alleStaedte;
+        //var alleStaedte = staedte.concat(staedte2);
+        //return alleStaedte;
 
     }
 
