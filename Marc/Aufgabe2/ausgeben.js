@@ -43,7 +43,7 @@ fs.readFile("staedte.json",	function(err,	data)	{
             console.log("------------------");
             i++;
         }
-        
+
     });
 
 });
