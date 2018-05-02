@@ -93,7 +93,6 @@ var p = new Promise(function(resolve, reject) {
 
 
 
-
         if (err==true) {
             err2 = err;
         }
