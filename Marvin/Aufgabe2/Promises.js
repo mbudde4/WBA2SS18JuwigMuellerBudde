@@ -9,6 +9,8 @@ var staedte1;
 var staedte2;
 var err1=0;
 var err2=0;
+var allestaedte;
+
 
 
 
@@ -17,11 +19,10 @@ var err2=0;
 var p = new Promise(function(resolve, reject) {
 
 
+
+
     fs.readFile("staedte.json",	function(err,	data)	{
 
-        if (err==true)
-        {
-        err1=err;
 
 
         content1 = data.toString();
@@ -36,12 +37,32 @@ var p = new Promise(function(resolve, reject) {
         //json array wird erstellt
         staedte1 = JSON.parse(content1);
 
+      /*  //Ausgabe1
+        var i = 0;
+
+
+        while (i < staedte1.length) {
+
+            console.log("name: " + chalk.red(staedte1[i].name));
+            console.log("country: " + chalk.green(staedte1[i].country));
+            console.log("population: " + chalk.blue(staedte1[i].population));
+            console.log("------------------");
+            i++;
+        }
+
+        */
+
+        if (err==true) {
+            err1 = err;
+        }
+
 
     });
 
     fs.readFile("mehr_staedte.json",	function(err,	data)	{
 
-        err2=err;
+
+
 
         content2 = data.toString();
 
@@ -53,23 +74,42 @@ var p = new Promise(function(resolve, reject) {
         content2 = content2.replace(/\]}/g,'\]');
 
         //json array wird erstellt
-        staedte2 = JSON.parse(content1);
+        staedte2 = JSON.parse(content2);
+
+        //Ausgabe2
+      /*  var i = 0;
+
+
+        while (i < staedte2.length) {
+
+          console.log("name: " + chalk.red(staedte2[i].name));
+          console.log("country: " + chalk.green(staedte2[i].country));
+          console.log("population: " + chalk.blue(staedte2[i].population));
+          console.log("------------------");
+          i++;
+        }
+
+      */
+
+
+
+
+        if (err==true) {
+            err2 = err;
+        }
 
 
     });
 
 
-    var test=0;
+    if(err1!=0 || err2!=0) {
 
-        if(err!=0 || err2!=0) {
+        reject('Failure!');
+    }
+    else {
 
-            resolve('Success!');
-        }
-        else {
-            reject('Failure!');
-        }
-
-
+        resolve('Success!');
+    }
 
 
 });
@@ -78,21 +118,23 @@ p.then(function() {
 
     console.log("Kein Fehler");
 
-    var alleStaedte = staedte1.concat(staedte2);
+    /* alleStaedte = staedte1.concat(staedte2);
 
 
-    //Ausgabe
-    var i = 0;
+
+      //Ausgabe
+     var i = 0;
 
 
-    while (i < alleStaedte.length) {
+      while (i < alleStaedte.length) {
 
-        console.log("name: " + chalk.red(alleStaedte[i].name));
-        console.log("country: " + chalk.green(alleStaedte[i].country));
-        console.log("population: " + chalk.blue(alleStaedte[i].population));
-        console.log("------------------");
-        i++;
-    }
+          console.log("name: " + chalk.red(alleStaedte[i].name));
+          console.log("country: " + chalk.green(alleStaedte[i].country));
+          console.log("population: " + chalk.blue(alleStaedte[i].population));
+          console.log("------------------");
+          i++;
+      }
+      */
 
 }).catch(function() {
 

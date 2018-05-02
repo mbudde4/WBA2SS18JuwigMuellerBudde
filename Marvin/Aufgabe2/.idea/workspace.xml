@@ -26,8 +26,16 @@
       <file leaf-file-name="Promises.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Promises.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="30">
-              <caret line="9" selection-start-line="9" selection-end-line="9" />
+            <state relative-caret-position="306">
+              <caret line="18" selection-start-line="18" selection-end-line="18" />
+              <folding>
+                <element signature="e#277#1052#0" />
+                <element signature="e#1132#1911#0" />
+                <element signature="e#1924#1969#0" />
+                <element signature="e#1983#2029#0" />
+                <element signature="e#2054#2516#0" />
+                <element signature="e#1763#1795#0" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -131,11 +139,12 @@
       <workItem from="1525168556819" duration="3665000" />
       <workItem from="1525204344301" duration="2324000" />
       <workItem from="1525259880623" duration="27000" />
+      <workItem from="1525276978018" duration="2664000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="6222000" />
+    <option name="totallyTimeSpent" value="8886000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -162,19 +171,19 @@
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info content_ui="combo" id="Project" order="0" weight="0.25" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Version Control" order="10" show_stripe_button="false" />
       <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.32911393" />
-      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Terminal" order="8" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Version Control" order="10" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Message" order="0" />
       <window_info id="Favorites" order="2" side_tool="true" />
     </layout-to-restore>
   </component>
@@ -184,7 +193,34 @@
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <option name="time" value="2" />
+    </breakpoint-manager>
+  </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/Callback.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="19" column="17" selection-start-line="19" selection-start-column="17" selection-end-line="19" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Promises.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" selection-start-line="9" selection-end-line="9" />
+          <folding>
+            <element signature="e#277#1052#0" />
+            <element signature="e#1132#1911#0" />
+            <element signature="e#1924#1969#0" />
+            <element signature="e#1983#2029#0" />
+            <element signature="e#2054#2516#0" />
+            <element signature="e#1763#1795#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Callback.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="323">
@@ -237,8 +273,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Promises.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="9" selection-start-line="9" selection-end-line="9" />
+        <state relative-caret-position="306">
+          <caret line="18" selection-start-line="18" selection-end-line="18" />
+          <folding>
+            <element signature="e#277#1052#0" />
+            <element signature="e#1132#1911#0" />
+            <element signature="e#1924#1969#0" />
+            <element signature="e#1983#2029#0" />
+            <element signature="e#2054#2516#0" />
+            <element signature="e#1763#1795#0" />
+          </folding>
         </state>
       </provider>
     </entry>
