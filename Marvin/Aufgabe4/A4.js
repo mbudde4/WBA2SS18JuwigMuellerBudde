@@ -13,8 +13,9 @@ for(var x = 0; x < 10; x++) {
 */
 
 //4.2:
+/*
 function getTweets( id ) {
-    return fetch("https://api.twitter.com/user/" + id )
+    return fetch("https://api.twitter.com/user/" +"${id}" )
         .then(function(response) {
         return JSON.parse(response);
     }).then( function(response) {
@@ -28,4 +29,26 @@ function getTweets( id ) {
         })
     })
 }
+*/
+
+
+//4.3
+
+let array =[32, 45, 7, 8];
+console.log(sortarray(array));
+
+
+
+function sortarray (array) {
+
+    return array.sort(sortNumber);
+
+}
+
+function sortNumber(a,b) {
+    return a - b;
+}
+
+
+
 
