@@ -9,8 +9,13 @@ router.get('/', (req, res, next) => {
 });
 
 router.post('/', (req, res, next) => {
+    const vote = {
+        songID: req.body.songID,
+        number: req.body.number
+    };
     res.status(201).json({
-        message: 'Vote was created'
+        message: 'Vote was created',
+        vote: vote
     });
 });
 
