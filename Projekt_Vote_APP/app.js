@@ -3,8 +3,12 @@ const app = express();
 const morgan = require('morgan');
 const bodyParser = require('body-parser');
 
+const mongoose = require('mongoose')
+
 const songRoutes = require('./api/routes/songs');
 const voteRoutes = require('./api/routes/votes');
+
+mongoose.connect('mongodb+srv://vote-app:vote-app@cluster0-w8a3i.mongodb.net/test?retryWrites=true');
 
 app.use(morgan('dev'));
 app.use(bodyParser.urlencoded({extended: false}));
